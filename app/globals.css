@@ -655,6 +655,7 @@ a {
 
 .destination-track {
   display: flex;
+  justify-content: safe center;
   gap: 20px;
   overflow-x: auto;
   padding-inline: clamp(20px, 2.5vw, 36px);

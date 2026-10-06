@@ -81,7 +81,7 @@ const categories = ["كل التجارب", "مذاقات محلية", "في ال
 const destinations = [
   {
     number: "٠١",
-    title: "الريف والقرى",
+    title: "الريف",
     description: "دروب هادئة وبيوت صغيرة بين أحضان الطبيعة.",
     image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85",
   },
@@ -93,7 +93,7 @@ const destinations = [
   },
   {
     number: "٠٣",
-    title: "المنتجعات",
+    title: "المنتجع",
     description: "استرخاء على الشاطئ وإقامة تليق بإجازتك.",
     image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85",
   },
