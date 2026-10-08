@@ -467,6 +467,23 @@ a {
   overflow: hidden;
 }
 
+.experience-open,
+.city-card-open {
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.experience-open:focus:not(:focus-visible),
+.city-card-open:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.experience-open:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: -3px;
+}
+
 .experience-image {
   position: relative;
   display: block;
