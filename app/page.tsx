@@ -3,99 +3,33 @@
 import { useRef, useState } from "react";
 import cityExperiences from "./data/city-experiences.json";
 
-const experiences = [
+type Experience = (typeof cityExperiences)[number]["experiences"][number] & { video?: string; bookingUrl?: string };
+const experiences: Experience[] = [
   {
-    title: "موعد الغروب",
-    place: "ساحل أمالفي، إيطاليا",
-    category: "مذاقات محلية",
-    duration: "٣ ساعات",
-    price: "٨٦ $",
-    rating: "٤٫٩٨",
-    image:
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1000&q=85",
-    description:
-      "اكتشف وصفات عائلية في التلال المطلة على بوسيتانو، ثم استمتع بغداء هادئ تحت أشجار الليمون.",
-  },
-  {
-    title: "دروب الطوقي",
-    place: "لشبونة، البرتغال",
-    category: "حياة أهل المكان",
-    duration: "ساعتان ونصف",
-    price: "٥٤ $",
-    rating: "٤٫٩٦",
-    image:
-      "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1000&q=85",
-    description:
-      "اركب أول ترام مع أحد أبناء لشبونة، وتوقف لتذوق الباستيل الدافئ وسماع الحكايات في أزقة ألفاما القديمة.",
-  },
-  {
-    title: "بين النجوم",
-    place: "باروس، اليونان",
+    title: "ركوب الخيل",
+    place: "الرياض، السعودية",
     category: "في الهواء الطلق",
-    duration: "٤ ساعات",
-    price: "١١٢ $",
-    rating: "٥٫٠٠",
-    image:
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85",
-    description:
-      "انطلق بقارب شراعي صغير نحو خلجان خفية ومياه صافية، بصحبة ربان محلي يعرف البحر جيدًا.",
+    duration: "تُحدد عند الحجز",
+    price: "عند الطلب",
+    rating: "مقترحة",
+    suggested: true,
+    image: "https://images.pexels.com/videos/8624885/adult-agriculture-animal-cavalry-8624885.jpeg?auto=compress&w=800",
+    video: "https://videos.pexels.com/video-files/8624885/8624885-hd_1920_1080_30fps.mp4",
+    description: "تجربة مقترحة لركوب الخيل في الهواء الطلق والاستمتاع بأجواء الطبيعة. تُحدد المدة والسعر عند الاستفسار عن الحجز.",
   },
   {
-    title: "محقق الصحراء",
-    place: "مراكش، المغرب",
-    category: "حِرف وتعلّم",
-    duration: "ساعتان",
-    price: "٦٨ $",
-    rating: "٤٫٩٥",
-    image:
-      "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=85",
-    description:
-      "اقضِ ظهيرة هادئة في ورشة فخار من الحي، وتعرّف على أسرار الدولاب بينما تحتسي الشاي بالنعناع.",
-  },
-  {
-    title: "دروب",
-    place: "فاس، المغرب",
-    category: "حياة أهل المكان",
-    duration: "٣ ساعات",
-    price: "٥٩ $",
-    rating: "٤٫٩٧",
-    image:
-      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1000&q=85",
-    description:
-      "تجوّل في دروب المدينة القديمة بصحبة دليل محلي، وتعرّف على الحرفيين والحكايات التي تحفظ ذاكرة المكان.",
-  },
-  {
-    title: "رحلة الضباب والغروب",
-    place: "ماديرا، البرتغال",
+    title: "رحلة دراجات",
+    place: "الرياض، السعودية",
     category: "في الهواء الطلق",
-    duration: "٥ ساعات",
-    price: "٩٤ $",
-    rating: "٤٫٩٩",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85",
-    description:
-      "اتبع مسارات ليفادا القديمة بين الغابات والقمم، مع توقفات صغيرة يختارها مرشد يعرف الجزيرة جيدًا.",
+    duration: "تُحدد عند الحجز",
+    price: "عند الطلب",
+    rating: "مقترحة",
+    suggested: true,
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85",
+    video: "https://videos.pexels.com/video-files/5789981/5789981-hd_1920_1080_30fps.mp4",
+    description: "تجربة مقترحة لرحلة دراجات في الهواء الطلق، تجمع الحركة والاستكشاف والاستمتاع بالطبيعة. تُحدد المدة والسعر عند الاستفسار عن الحجز.",
   },
-  {
-    title: "العبير الجبلي",
-    place: "الطائف، السعودية",
-    category: "في الهواء الطلق",
-    duration: "يوم واحد",
-    price: "١٬٧٥٨ ر.س",
-    rating: "جديد",
-    image: "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=500,height=500/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ef05e738-4efb-4074-826e-b0b153f76e55.png",
-    description: "من حافة الغيم والقمم الشاهقة، اكتشف مدينة الطائف كما لم تعهدها من قبل، واستمتع بجوها البارد وروحها الحجازية الأصيلة، في رحلة يوم واحد، تُعيد لك هدوءك وصفاء ذهنك.",
-  },
-  {
-    title: "رحلة الأصدقاء",
-    place: "أبها، السعودية",
-    category: "في الهواء الطلق",
-    duration: "٣ أيام وليلتان",
-    price: "٧٬١٩٦ ر.س",
-    rating: "جديد",
-    image: "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=500,height=500/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/cd990293-6ca9-4647-ab7f-9075b0d2724e.png",
-    description: "اهرب من حرارة الصيف إلى الأجواء الباردة، واستمتع بقمم عسير الغارقة في الضباب، في رحلة اقتصادية صُنعت خصيصًا من أجلك، على مدار 3 أيام وليلتين بمدينة أبها، ساحرة الجنوب.",
-  },
+  ...cityExperiences.flatMap((city) => city.experiences),
 ];
 
 const categories = ["كل التجارب", "مذاقات محلية", "في الهواء الطلق", "حياة أهل المكان", "حِرف وتعلّم"];
@@ -117,7 +51,6 @@ const destinations = [
     image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=85",
   },
 ];
-type Experience = (typeof experiences)[number] & { bookingUrl?: string; suggested?: boolean };
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -264,11 +197,14 @@ export default function Home() {
                     className={`experience-image image-${index + 1}`}
                     style={{ backgroundImage: `url("${experience.image}")` }}
                   >
+                    {experience.video && (
+                      <video className="experience-video" src={experience.video} poster={experience.image} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
+                    )}
                     <span className="image-category">{experience.category}</span>
                     <span className="experience-details">
                       <span className="experience-place">{experience.place}</span>
                       <span className="experience-title">{experience.title}</span>
-                      <span className="experience-meta">{experience.duration} <span>·</span> ابتداءً من {experience.price} للشخص</span>
+                      <span className="experience-meta">{experience.duration} <span>·</span> {experience.suggested ? `السعر ${experience.price}` : `ابتداءً من ${experience.price} للشخص`}</span>
                       <span className="experience-rating"><span aria-hidden="true">★</span> {experience.rating}</span>
                     </span>
                   </span>
