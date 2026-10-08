@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import cityExperiences from "./data/city-experiences.json";
 
 type Experience = (typeof cityExperiences)[number]["experiences"][number] & { video?: string; bookingUrl?: string };
@@ -32,7 +32,16 @@ const experiences: Experience[] = [
   ...cityExperiences.flatMap((city) => city.experiences),
 ];
 
-const categories = ["كل التجارب", "مذاقات محلية", "في الهواء الطلق", "حياة أهل المكان", "حِرف وتعلّم"];
+const activityFilters = [
+  { label: "خيل", pattern: /خيل|فروسية/ },
+  { label: "دراجات", pattern: /دراجات/ },
+  { label: "الجبل", pattern: /جبل|جبال|قمم|قمة|هايكنج|مرتفعات/ },
+  { label: "المخيم", pattern: /مخيم|تخييم|صحرا|الصحراء/ },
+  { label: "يوغا", pattern: /يوغا|يوجا/ },
+  { label: "البجي", pattern: /بجي|باجي|buggy/i },
+  { label: "الطبيعة", pattern: /طبيع|غابات|ريف|شاطئ|البحر|مزارع|قطاف/ },
+];
+const categories = ["كل التجارب", ...activityFilters.map((filter) => filter.label)];
 const destinations = [
   {
     title: "الرياض",
@@ -52,18 +61,16 @@ const destinations = [
   },
   ...cityExperiences.filter((city) => ["asir", "taif", "al-bahah", "jazan"].includes(city.id)).map((city) => ({
     title: city.city,
-    image: city.experiences[0].image,
+    image: city.experiences[0]?.image ?? "",
   })),
 ];
 
 export default function Home() {
-  const [query, setQuery] = useState("");
   const [category, setCategory] = useState("كل التجارب");
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
   const [authMessage, setAuthMessage] = useState("");
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const openAuth = (mode: "login" | "signup") => {
     setMenuOpen(false);
@@ -71,11 +78,10 @@ export default function Home() {
     setAuthMode(mode);
   };
 
-  const filteredExperiences = experiences.filter((experience) => {
-    const matchesCategory = category === "كل التجارب" || experience.category === category;
-    const searchText = `${experience.title} ${experience.place} ${experience.category}`.toLowerCase();
-    return matchesCategory && searchText.includes(query.trim().toLowerCase());
-  });
+  const activeFilter = activityFilters.find((filter) => filter.label === category);
+  const filteredExperiences = experiences.filter((experience) =>
+    !activeFilter || activeFilter.pattern.test(`${experience.title} ${experience.description}`)
+  );
 
   return (
     <main>
@@ -139,7 +145,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>غيّر جوّك.<br />وعِش التجربة.</h1>
           <a className="hero-cta" href="#experiences">
-            اكتشف التجارب <span aria-hidden="true">↓</span>
+            اكتشف التجارب
           </a>
         </div>
 
@@ -149,12 +155,8 @@ export default function Home() {
       <section className="discovery section-wrap" id="experiences">
         <div className="section-heading">
           <div>
-            <p className="eyebrow dark-eyebrow">بداية الحكاية</p>
             <h2>حكايات، لا محطات عابرة.</h2>
           </div>
-          <p className="section-intro">
-            اكتشف المكان بصحبة من يعرفونه حق المعرفة.<br />عُد بذكريات تتجاوز الصور.
-          </p>
         </div>
 
         <div className="discovery-tools">
@@ -171,24 +173,11 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <label className="search-box">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="10.8" cy="10.8" r="6.8" />
-              <path d="m16 16 4.2 4.2" />
-            </svg>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="ابحث عن مكان أو تجربة"
-              aria-label="ابحث عن التجارب"
-            />
-          </label>
         </div>
 
         {filteredExperiences.length > 0 ? (
           <div className="experience-carousel-wrap">
-          <div className="experience-grid" ref={carouselRef} aria-label="تجارب مقترحة">
+          <div className="experience-grid" aria-label="تجارب مقترحة">
             {filteredExperiences.map((experience, index) => (
               <article className="experience-card" key={experience.title}>
                 <button
@@ -215,21 +204,11 @@ export default function Home() {
               </article>
             ))}
           </div>
-          {filteredExperiences.length > 1 && (
-            <button
-              className="carousel-next"
-              type="button"
-              aria-label="عرض تجارب أخرى"
-              onClick={() => carouselRef.current?.scrollBy({ left: -carouselRef.current.clientWidth * 0.75, behavior: "smooth" })}
-            >
-              <span aria-hidden="true">←</span>
-            </button>
-          )}
           </div>
         ) : (
           <div className="empty-state">
             <p>لم نعثر على تجارب مطابقة.</p>
-            <button type="button" onClick={() => { setQuery(""); setCategory("كل التجارب"); }}>
+            <button type="button" onClick={() => setCategory("كل التجارب")}>
               إزالة عوامل التصفية
             </button>
           </div>
@@ -243,7 +222,12 @@ export default function Home() {
         </div>
         <div className="destination-track" aria-label="وجهات التجارب السياحية">
           {destinations.map((destination) => (
-            <article className="destination-card" key={destination.title}>
+            <a
+              className="destination-card"
+              key={destination.title}
+              href={`#city-${cityExperiences.find((city) => city.city === destination.title)?.id}`}
+              aria-label={`اكتشف ${destination.title}`}
+            >
               <div
                 className="destination-card-image"
                 role="img"
@@ -253,7 +237,7 @@ export default function Home() {
               <div className="destination-card-copy">
                 <h3>{destination.title}</h3>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>
@@ -270,8 +254,7 @@ export default function Home() {
             <div className="city-experience-grid">
               {city.experiences.map((experience) => (
                 <article className="city-experience-card" key={experience.title}>
-                  <div className="city-experience-image" style={{ backgroundImage: `url("${experience.image}")` }}>
-                  </div>
+                  <div className="city-experience-image" style={{ backgroundImage: `url("${experience.image}")` }} />
                   <div className="city-experience-copy">
                     <p className="city-experience-place">{experience.place}</p>
                     <h3>{experience.title}</h3>
@@ -306,12 +289,12 @@ export default function Home() {
           </nav>
           <div className="footer-column footer-contact">
             <h2>نخططها سوا؟</h2>
-            <a href="mailto:hello@elsewhere.travel">hello@elsewhere.travel <span aria-hidden="true">↗</span></a>
+            <a href="mailto:hello@elsewhere.travel">hello@elsewhere.travel</a>
           </div>
         </div>
         <div className="footer-bottom">
           <p>© مكان آخر. كل رحلة تبدأ بحكاية.</p>
-          <a href="#top">العودة للأعلى <span aria-hidden="true">↑</span></a>
+          <a href="#top">العودة للأعلى</a>
         </div>
       </footer>
 
@@ -342,7 +325,7 @@ export default function Home() {
               <p>{selectedExperience.description}</p>
               <div className="dialog-bottom">
                 <span>{selectedExperience.suggested ? "السعر " : "ابتداءً من "}<strong>{selectedExperience.price}</strong></span>
-                <a href={selectedExperience.bookingUrl ?? "mailto:hello@elsewhere.travel?subject=Plan%20an%20experience"}>{selectedExperience.bookingUrl ? "التفاصيل والحجز" : "استفسر عن المواعيد"} <span aria-hidden="true">↗</span></a>
+                <a href={selectedExperience.bookingUrl ?? "mailto:hello@elsewhere.travel?subject=Plan%20an%20experience"}>{selectedExperience.bookingUrl ? "التفاصيل والحجز" : "استفسر عن المواعيد"}</a>
               </div>
             </div>
           </section>
