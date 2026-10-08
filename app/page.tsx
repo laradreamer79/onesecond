@@ -76,7 +76,6 @@ const destinations = [
 
 export default function Home() {
   const [category, setCategory] = useState("كل التجارب");
-  const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
   const [authMessage, setAuthMessage] = useState("");
@@ -189,12 +188,7 @@ export default function Home() {
           <div className="experience-grid" aria-label="تجارب مقترحة">
             {filteredExperiences.map((experience, index) => (
               <article className="experience-card" key={experience.title}>
-                <button
-                  className="experience-open"
-                  type="button"
-                  onClick={() => setSelectedExperience(experience)}
-                  aria-label={`اكتشف ${experience.title} في ${experience.place}`}
-                >
+                <div className="experience-open">
                   <span
                     className={`experience-image image-${index + 1}`}
                     style={{ backgroundImage: `url("${experience.image}")` }}
@@ -209,7 +203,7 @@ export default function Home() {
                       <span className="experience-rating"><span aria-hidden="true">★</span> {experience.rating}</span>
                     </span>
                   </span>
-                </button>
+                </div>
               </article>
             ))}
           </div>
@@ -273,7 +267,6 @@ export default function Home() {
                       <div><dt>السعر</dt><dd>{experience.price}</dd></div>
                     </dl>
                   </div>
-                  <button className="city-card-open" type="button" onClick={() => setSelectedExperience(experience)} aria-label={`عرض تفاصيل ${experience.title} في ${experience.place}`} />
                 </article>
               ))}
             </div>
@@ -310,40 +303,6 @@ export default function Home() {
           <a href="#top">العودة للأعلى</a>
         </div>
       </footer>
-
-      {selectedExperience && (
-        <div className="dialog-backdrop" onClick={() => setSelectedExperience(null)}>
-          <section
-            className="experience-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="dialog-title"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div
-              className="dialog-image"
-              style={{ backgroundImage: `url("${selectedExperience.image}")` }}
-            />
-            <button
-              className="dialog-close"
-              type="button"
-              aria-label="إغلاق تفاصيل التجربة"
-              onClick={() => setSelectedExperience(null)}
-            >
-              ×
-            </button>
-            <div className="dialog-copy">
-              <p className="eyebrow dark-eyebrow">{selectedExperience.place} · {selectedExperience.duration}</p>
-              <h2 id="dialog-title">{selectedExperience.title}</h2>
-              <p>{selectedExperience.description}</p>
-              <div className="dialog-bottom">
-                <span>{selectedExperience.suggested ? "السعر " : "ابتداءً من "}<strong>{selectedExperience.price}</strong></span>
-                <a href={selectedExperience.bookingUrl ?? "mailto:hello@elsewhere.travel?subject=Plan%20an%20experience"}>{selectedExperience.bookingUrl ? "التفاصيل والحجز" : "استفسر عن المواعيد"}</a>
-              </div>
-            </div>
-          </section>
-        </div>
-      )}
 
       {authMode && (
         <div className="dialog-backdrop" onClick={() => setAuthMode(null)}>
