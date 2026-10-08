@@ -112,6 +112,7 @@ a {
 }
 
 .main-nav a,
+.main-nav > span,
 .header-link,
 .site-footer a {
   transition: opacity 180ms ease;
@@ -426,6 +427,8 @@ a {
 .experience-grid {
   display: flex;
   gap: 12px;
+  padding-inline-start: 20px;
+  scroll-padding-inline-start: 20px;
   overflow-x: auto;
   padding-bottom: 12px;
   scroll-behavior: smooth;
@@ -555,7 +558,7 @@ a {
   position: absolute;
   z-index: 1;
   inset-inline: 0;
-  bottom: 0;
+  bottom: 12px;
   flex-direction: column;
   padding: 50px 14px 16px;
   color: white;
@@ -570,7 +573,7 @@ a {
   font-family: var(--font-tajawal), sans-serif;
   font-weight: 700;
   margin-top: 7px;
-  font-size: 19px;
+  font-size: 26px;
   line-height: 1.4;
 }
 
@@ -893,7 +896,9 @@ a {
 }
 
 .footer-column a,
-.footer-bottom a {
+.footer-column > span,
+.footer-bottom a,
+.footer-bottom > span {
   color: rgb(255 255 255 / 78%);
   font-size: 15px;
   transition: color 180ms ease;
@@ -1164,14 +1169,14 @@ a {
   .search-box { width: 100%; min-height: 42px; padding-inline: 0; border-inline-start: 0; border-bottom: 1px solid var(--line); }
   .category-list { gap: 4px; }
   .category-button { min-height: 42px; padding: 0 16px; font-size: 12px; }
-  .experience-grid { gap: 12px; padding-inline: 22px; scroll-padding-inline: 22px; overscroll-behavior-x: contain; }
+  .experience-grid { gap: 12px; padding-inline: 22px; padding-inline-start: 30px; scroll-padding-inline: 22px; scroll-padding-inline-start: 30px; overscroll-behavior-x: contain; }
   .experience-card { flex-basis: min(calc(100vw - 64px), 340px); }
   .experience-open { border-radius: 20px; isolation: isolate; }
   .experience-image { aspect-ratio: 3 / 4; border-radius: inherit; }
   .image-category { top: 9px; inset-inline-start: 8px; padding: 7px; font-size: 8px; }
   .experience-details { padding: 42px 16px 18px; }
   .experience-place { font-size: 11px; }
-  .experience-title { font-size: 17px; }
+  .experience-title { font-size: 23px; }
   .experience-rating { font-size: 11px; }
   .experience-meta { font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; }
   .manifesto { grid-template-columns: 1fr; }
@@ -1200,3 +1205,13 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+.static-preview .category-button,
+.static-preview .menu-toggle,
+.static-preview .hero-cta,
+.static-preview .destination-card {
+  pointer-events: none;
+  cursor: default;
+}
+.static-preview .category-button { display: inline-flex; align-items: center; }
+.static-preview .footer-bottom p { overflow-wrap: anywhere; }

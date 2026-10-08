@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import cityExperiences from "./data/city-experiences.json";
 
@@ -33,16 +30,7 @@ const experiences: Experience[] = [
   ...cityExperiences.flatMap((city) => city.experiences),
 ];
 
-const activityFilters = [
-  { label: "خيل", pattern: /خيل|فروسية/ },
-  { label: "دراجات", pattern: /دراجات/ },
-  { label: "الجبل", pattern: /جبل|جبال|قمم|قمة|هايكنج|مرتفعات/ },
-  { label: "المخيم", pattern: /مخيم|تخييم|صحرا|الصحراء/ },
-  { label: "يوغا", pattern: /يوغا|يوجا/ },
-  { label: "البجي", pattern: /بجي|باجي|buggy/i },
-  { label: "الطبيعة", pattern: /طبيع|غابات|ريف|شاطئ|البحر|مزارع|قطاف/ },
-];
-const categories = ["كل التجارب", ...activityFilters.map((filter) => filter.label)];
+const categories = ["كل التجارب", "خيل", "دراجات", "الجبل", "المخيم", "يوغا", "البجي", "الطبيعة"];
 const destinations = [
   {
     title: "الرياض",
@@ -75,24 +63,8 @@ const destinations = [
 ];
 
 export default function Home() {
-  const [category, setCategory] = useState("كل التجارب");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<"login" | "signup" | null>(null);
-  const [authMessage, setAuthMessage] = useState("");
-
-  const openAuth = (mode: "login" | "signup") => {
-    setMenuOpen(false);
-    setAuthMessage("");
-    setAuthMode(mode);
-  };
-
-  const activeFilter = activityFilters.find((filter) => filter.label === category);
-  const filteredExperiences = experiences.filter((experience) =>
-    !activeFilter || activeFilter.pattern.test(`${experience.title} ${experience.description}`)
-  );
-
   return (
-    <main>
+    <main className="static-preview">
       <section className="hero" id="top">
         <video
           className="hero-video"
@@ -111,50 +83,26 @@ export default function Home() {
         </video>
         <div className="hero-shade" />
         <header className="site-header">
-          <a className="wordmark" href="#top" aria-label="ون سكند، الصفحة الرئيسية">
+          <span className="wordmark" aria-label="ون سكند، الصفحة الرئيسية">
             <Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} preload />
-          </a>
+          </span>
           <nav className="main-nav" aria-label="التنقل الرئيسي">
-            <a href="#destinations">الوجهات</a>
-            <a href="#experiences">التجارب</a>
-            <a href="#about">نبذة عنا</a>
+            <span>الوجهات</span>
+            <span>التجارب</span>
+            <span>نبذة عنا</span>
           </nav>
           <div className="header-menu">
-            <button
-              className="menu-toggle"
-              type="button"
-              aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}
-              aria-expanded={menuOpen}
-              aria-controls="site-menu-panel"
-              onClick={() => setMenuOpen((isOpen) => !isOpen)}
-            >
-              {menuOpen ? (
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
-              ) : (
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-              )}
-            </button>
-            {menuOpen && (
-              <div className="menu-panel" id="site-menu-panel">
-                <nav aria-label="روابط الموقع">
-                  <a href="#destinations" onClick={() => setMenuOpen(false)}>الوجهات</a>
-                  <a href="#experiences" onClick={() => setMenuOpen(false)}>التجارب</a>
-                  <a href="#about" onClick={() => setMenuOpen(false)}>نبذة عنا</a>
-                </nav>
-                <div className="mobile-auth-actions">
-                  <button type="button" onClick={() => openAuth("login")}>تسجيل الدخول</button>
-                  <button type="button" onClick={() => openAuth("signup")}>إنشاء حساب</button>
-                </div>
-              </div>
-            )}
+            <span className="menu-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            </span>
           </div>
         </header>
 
         <div className="hero-content">
           <h1>غيّر جوّك.<br />وعِش التجربة.</h1>
-          <a className="hero-cta" href="#experiences">
+          <span className="hero-cta">
             اكتشف التجارب
-          </a>
+          </span>
         </div>
 
         <div className="hero-index"><span>٠١</span> / ٠٤</div>
@@ -168,25 +116,18 @@ export default function Home() {
         </div>
 
         <div className="discovery-tools">
-          <div className="category-list" aria-label="تصفية التجارب حسب الفئة">
+          <div className="category-list" aria-label="أنواع التجارب">
             {categories.map((item) => (
-              <button
-                className={`category-button${category === item ? " is-active" : ""}`}
-                key={item}
-                onClick={() => setCategory(item)}
-                type="button"
-                aria-pressed={category === item}
-              >
+              <span className={`category-button${item === "كل التجارب" ? " is-active" : ""}`} key={item}>
                 {item}
-              </button>
+              </span>
             ))}
           </div>
         </div>
 
-        {filteredExperiences.length > 0 ? (
           <div className="experience-carousel-wrap">
           <div className="experience-grid" aria-label="تجارب مقترحة">
-            {filteredExperiences.map((experience, index) => (
+            {experiences.map((experience, index) => (
               <article className="experience-card" key={experience.title}>
                 <div className="experience-open">
                   <span
@@ -197,10 +138,7 @@ export default function Home() {
                       <video className="experience-video" src={experience.video} poster={experience.image} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
                     )}
                     <span className="experience-details">
-                      <span className="experience-place">{experience.place}</span>
                       <span className="experience-title">{experience.title}</span>
-                      <span className="experience-meta">{experience.duration} <span>·</span> {experience.suggested ? `السعر ${experience.price}` : `ابتداءً من ${experience.price} للشخص`}</span>
-                      <span className="experience-rating"><span aria-hidden="true">★</span> {experience.rating}</span>
                     </span>
                   </span>
                 </div>
@@ -208,14 +146,6 @@ export default function Home() {
             ))}
           </div>
           </div>
-        ) : (
-          <div className="empty-state">
-            <p>لم نعثر على تجارب مطابقة.</p>
-            <button type="button" onClick={() => setCategory("كل التجارب")}>
-              إزالة عوامل التصفية
-            </button>
-          </div>
-        )}
       </section>
 
       <section className="destinations-section" id="destinations">
@@ -225,10 +155,9 @@ export default function Home() {
         </div>
         <div className="destination-track" aria-label="وجهات التجارب السياحية">
           {destinations.map((destination) => (
-            <a
+            <span
               className="destination-card"
               key={destination.title}
-              href={`#city-${cityExperiences.find((city) => city.city === destination.title)?.id}`}
               aria-label={`اكتشف ${destination.title}`}
             >
               <div
@@ -240,7 +169,7 @@ export default function Home() {
               <div className="destination-card-copy">
                 <h3>{destination.title}</h3>
               </div>
-            </a>
+            </span>
           ))}
         </div>
       </section>
@@ -250,7 +179,6 @@ export default function Home() {
           <section className="city-section" id={`city-${city.id}`} key={city.id} aria-labelledby={`city-heading-${city.id}`}>
             <div className="section-heading city-heading">
               <div>
-                <p className="eyebrow dark-eyebrow">اكتشف المدينة</p>
                 <h2 id={`city-heading-${city.id}`}>{city.city}</h2>
               </div>
             </div>
@@ -277,85 +205,33 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand" id="about">
-            <a className="wordmark footer-wordmark" href="#top"><Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} /></a>
+            <span className="wordmark footer-wordmark"><Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} /></span>
             <p>تجارب محلية صغيرة، وذكريات كبيرة تأخذها معك.</p>
           </div>
           <nav className="footer-column" aria-label="استكشف الموقع">
             <h2>اكتشف</h2>
-            <a href="#destinations">الوجهات</a>
-            <a href="#experiences">كل التجارب</a>
+            <span>الوجهات</span>
+            <span>كل التجارب</span>
           </nav>
           <nav className="footer-column" aria-label="تجارب الموسم">
             <h2>عِش اللحظة</h2>
-            <a href="#top">ابدأ رحلتك</a>
+            <span>ابدأ رحلتك</span>
           </nav>
           <div className="footer-column footer-contact">
             <h2>نخططها سوا؟</h2>
-            <a href="mailto:hello@elsewhere.travel">hello@elsewhere.travel</a>
+            <span>hello@elsewhere.travel</span>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>صورة عسير: <a href="https://commons.wikimedia.org/wiki/File:الحبلة_منطقة_عسير.jpg">Fayza fafa</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · اقتصاص للعرض</p>
-          <p>صورة العلا: <a href="https://commons.wikimedia.org/wiki/File:Elephant_rock,_Al-%27Ula_(2024).jpg">وكالة الأنباء السعودية (واس)</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · اقتصاص للعرض</p>
-          <p>صورة الطائف: <a href="https://commons.wikimedia.org/wiki/File:الطائف_من_جبل_الهدى2.jpg">عباد ديرانية</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> · اقتصاص للعرض</p>
-          <p>صورة الرياض: <a href="https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg">B.alotaby</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · اقتصاص للعرض</p>
+          <p>صورة عسير: <span>Fayza fafa (https://commons.wikimedia.org/wiki/File:الحبلة_منطقة_عسير.jpg)</span> · <span>CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)</span> · اقتصاص للعرض</p>
+          <p>صورة العلا: <span>وكالة الأنباء السعودية (واس) (https://commons.wikimedia.org/wiki/File:Elephant_rock,_Al-%27Ula_(2024).jpg)</span> · <span>CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)</span> · اقتصاص للعرض</p>
+          <p>صورة الطائف: <span>عباد ديرانية (https://commons.wikimedia.org/wiki/File:الطائف_من_جبل_الهدى2.jpg)</span> · <span>CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)</span> · اقتصاص للعرض</p>
+          <p>صورة الرياض: <span>B.alotaby (https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg)</span> · <span>CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)</span> · اقتصاص للعرض</p>
           <p>© مكان آخر. كل رحلة تبدأ بحكاية.</p>
-          <a href="#top">العودة للأعلى</a>
+          <span>العودة للأعلى</span>
         </div>
       </footer>
 
-      {authMode && (
-        <div className="dialog-backdrop" onClick={() => setAuthMode(null)}>
-          <section
-            className="auth-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="auth-title"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              className="dialog-close"
-              type="button"
-              aria-label="إغلاق نافذة الحساب"
-              onClick={() => setAuthMode(null)}
-            >
-              ×
-            </button>
-            <a className="wordmark auth-wordmark" href="#top" onClick={() => setAuthMode(null)}>
-              <Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} />
-            </a>
-            <h2 id="auth-title">{authMode === "login" ? "أهلًا بعودتك" : "انضم إلى مكان آخر"}</h2>
-            <p className="auth-intro">{authMode === "login" ? "سجّل دخولك لمتابعة رحلاتك." : "أنشئ حسابًا وابدأ باكتشاف تجارب جديدة."}</p>
-            <form onSubmit={(event) => { event.preventDefault(); setAuthMessage("خدمة الحسابات غير مفعّلة بعد."); }}>
-              {authMode === "signup" && (
-                <label>
-                  الاسم
-                  <input type="text" name="name" autoComplete="name" required />
-                </label>
-              )}
-              <label>
-                البريد الإلكتروني
-                <input type="email" name="email" autoComplete="email" required />
-              </label>
-              <label>
-                كلمة المرور
-                <input type="password" name="password" autoComplete={authMode === "login" ? "current-password" : "new-password"} required />
-              </label>
-              {authMessage && <p className="auth-message" role="status">{authMessage}</p>}
-              <button className="auth-submit" type="submit">
-                {authMode === "login" ? "تسجيل الدخول" : "إنشاء حساب"}
-              </button>
-            </form>
-            <button
-              className="auth-switch"
-              type="button"
-              onClick={() => openAuth(authMode === "login" ? "signup" : "login")}
-            >
-              {authMode === "login" ? "ليس لديك حساب؟ أنشئ حسابًا" : "لديك حساب؟ سجّل الدخول"}
-            </button>
-          </section>
-        </div>
-      )}
     </main>
   );
 }
