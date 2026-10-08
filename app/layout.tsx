@@ -9,9 +9,19 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "مكان آخر | تجارب محلية لمجموعات صغيرة",
+  title: "ون سكند | تجارب حول المملكة",
   description:
     "اكتشف تجارب محلية لمجموعات صغيرة، بقيادة أشخاص يعرفون المكان ويمنحونه روحه.",
+  openGraph: {
+    title: "ون سكند | تجارب حول المملكة",
+    siteName: "ون سكند",
+    locale: "ar_SA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ون سكند | تجارب حول المملكة",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
