@@ -1142,7 +1142,7 @@ a {
   .hero-cta { margin-top: 26px; }
   .hero-index { inset-inline-end: 22px; bottom: 25px; font-size: 10px; }
   .section-wrap { padding: 76px 22px 82px; }
-  .experience-carousel-wrap { left: 22px; }
+  .experience-carousel-wrap { left: 0; width: calc(100% + 44px); margin-inline: -22px; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 15px; }
   .section-heading h2 { font-size: 26px; }
   .city-heading h2 { font-size: 24px; }
@@ -1160,15 +1160,16 @@ a {
   .search-box { width: 100%; min-height: 42px; padding-inline: 0; border-inline-start: 0; border-bottom: 1px solid var(--line); }
   .category-list { gap: 4px; }
   .category-button { min-height: 42px; padding: 0 16px; font-size: 12px; }
-  .experience-grid { gap: 10px; }
-  .experience-card { flex-basis: min(84vw, 340px); }
-  .experience-image { aspect-ratio: 3 / 4; }
+  .experience-grid { gap: 12px; padding-inline: 22px; scroll-padding-inline: 22px; overscroll-behavior-x: contain; }
+  .experience-card { flex-basis: min(calc(100vw - 64px), 340px); }
+  .experience-open { border-radius: 20px; isolation: isolate; }
+  .experience-image { aspect-ratio: 3 / 4; border-radius: inherit; }
   .image-category { top: 9px; inset-inline-start: 8px; padding: 7px; font-size: 8px; }
-  .experience-details { padding: 42px 12px 14px; }
-  .experience-place { font-size: 9px; }
+  .experience-details { padding: 42px 16px 18px; }
+  .experience-place { font-size: 11px; }
   .experience-title { font-size: 17px; }
-  .experience-rating { font-size: 9px; }
-  .experience-meta { font-size: 9px; line-height: 1.6; }
+  .experience-rating { font-size: 11px; }
+  .experience-meta { font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; }
   .manifesto { grid-template-columns: 1fr; }
   .manifesto-image { min-height: 350px; }
   .manifesto-copy { padding: 58px 25px 65px; }
