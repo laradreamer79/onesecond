@@ -46,23 +46,31 @@ const categories = ["كل التجارب", ...activityFilters.map((filter) => fi
 const destinations = [
   {
     title: "الرياض",
-    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=85",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Riyadh_Skyline.jpg/960px-Riyadh_Skyline.jpg",
   },
   {
     title: "جدة",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Jpg_%D8%AC%D8%AF%D8%A9_%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%8A%D8%A9.jpg",
   },
   {
     title: "ينبع",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85",
+    image: "https://images.pexels.com/photos/8535139/pexels-photo-8535139.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     title: "العلا",
-    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=85",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Elephant_rock%2C_Al-%27Ula_%282024%29.jpg/960px-Elephant_rock%2C_Al-%27Ula_%282024%29.jpg",
   },
   ...cityExperiences.filter((city) => ["asir", "taif", "al-bahah", "jazan"].includes(city.id)).map((city) => ({
     title: city.city,
-    image: city.experiences[0]?.image ?? "",
+    image: city.id === "taif"
+      ? "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/الطائف_من_جبل_الهدى2.jpg/960px-الطائف_من_جبل_الهدى2.jpg"
+      : city.id === "jazan"
+        ? "https://images.pexels.com/photos/34444561/pexels-photo-34444561.jpeg?auto=compress&cs=tinysrgb&w=800"
+        : city.id === "asir"
+          ? "https://upload.wikimedia.org/wikipedia/commons/8/87/الحبلة_منطقة_عسير.jpg"
+          : city.id === "al-bahah"
+            ? "https://images.pexels.com/photos/18547390/pexels-photo-18547390.jpeg?auto=compress&cs=tinysrgb&w=800"
+            : city.experiences[0]?.image ?? "",
   })),
 ];
 
@@ -294,6 +302,10 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
+          <p>صورة عسير: <a href="https://commons.wikimedia.org/wiki/File:الحبلة_منطقة_عسير.jpg">Fayza fafa</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · اقتصاص للعرض</p>
+          <p>صورة العلا: <a href="https://commons.wikimedia.org/wiki/File:Elephant_rock,_Al-%27Ula_(2024).jpg">وكالة الأنباء السعودية (واس)</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · اقتصاص للعرض</p>
+          <p>صورة الطائف: <a href="https://commons.wikimedia.org/wiki/File:الطائف_من_جبل_الهدى2.jpg">عباد ديرانية</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> · اقتصاص للعرض</p>
+          <p>صورة الرياض: <a href="https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg">B.alotaby</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · اقتصاص للعرض</p>
           <p>© مكان آخر. كل رحلة تبدأ بحكاية.</p>
           <a href="#top">العودة للأعلى</a>
         </div>
