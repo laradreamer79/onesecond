@@ -154,7 +154,7 @@ export default function Home() {
 
       <section className="destinations-section" id="destinations">
         <div className="destinations-heading section-wrap">
-          <h2>وين ودّك تكون؟</h2>
+          <h2>وين بتكون مغامرتك الجاية؟</h2>
           <p>اختر وجهتك واكتشف تجارب الرياض، جدة، ينبع، العلا، عسير، الطائف، الباحة وجازان</p>
         </div>
         <div className="destination-track" aria-label="وجهات التجارب السياحية">
