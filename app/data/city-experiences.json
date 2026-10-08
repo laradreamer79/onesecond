@@ -38,6 +38,18 @@
         "description": "تجربة ليلية هادئة تبدأ بجلسة يوغا وسط الطبيعة، ثم مراقبة النجوم بالتلسكوب والتصوير الليلي، مع رمي السهام، وتُختتم بضيافة سعودية ووجبة عشاء في أجواء صحراوية مريحة",
         "bookingUrl": "https://onesec.com.sa/products/بين-النجوم",
         "suggested": false
+      },
+      {
+        "title": "دروب الطوقي",
+        "place": "الرياض، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "٣٥٩ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ac8d14b4-0bd2-44ef-abd4-622d68234f36.png",
+        "description": "تجربة مغامرة تجمع بين استكشاف الصحراء والهايكنق الخفيف، مع السفاري ورمي السهام والرسم على الفخار والألعاب الجماعية، وتُختتم بجلسة هادئة ووجبة عشاء وسط الطبيعة.",
+        "bookingUrl": "https://onesec.com.sa/products/دروب-الطوقي",
+        "suggested": false
       }
     ]
   },
@@ -80,6 +92,17 @@
         "description": "في رحلة يوم واحد تنبض بالإبداع والحياة، تبدأ تجربتك من حي جميل لاستكشاف الفن المعاصر، ثم تنتقل إلى أجواء الترفيه في سيتي ووك، وتستمتع في ختامها بعشاء حجازي فاخر ونزهة ساحرة على واجهة جدة بروميناد بإطلالتها البحرية المميزة.",
         "bookingUrl": "https://onesec.com.sa/products/جميل",
         "suggested": false
+      },
+      {
+        "title": "نسيم الكورنيش",
+        "place": "جدة، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/6d721932-6e4e-4219-8bda-8e79d7cbd264.jpg",
+        "description": "نزهة مقترحة على كورنيش جدة للاستمتاع بنسيم البحر ومحطات التصوير وأجواء الغروب.",
+        "suggested": true
       }
     ]
   },
@@ -119,6 +142,17 @@
         "rating": "مقترحة",
         "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/eea56f7a-ca2c-4a9f-866d-2abd51054e64.jpg",
         "suggested": true
+      },
+      {
+        "title": "جولة على الواجهة البحرية",
+        "place": "ينبع، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/eea56f7a-ca2c-4a9f-866d-2abd51054e64.jpg",
+        "description": "جولة مقترحة على واجهة ينبع البحرية تجمع المشي والاسترخاء والتصوير بإطلالات على البحر الأحمر.",
+        "suggested": true
       }
     ]
   },
@@ -157,6 +191,17 @@
         "price": "عند الطلب",
         "rating": "مقترحة",
         "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/29244d61-cd55-4106-be4a-2776beecfe3e.png",
+        "suggested": true
+      },
+      {
+        "title": "غروب في الواحة",
+        "place": "العلا، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/29244d61-cd55-4106-be4a-2776beecfe3e.png",
+        "description": "تجربة مقترحة بين نخيل الواحة للاستمتاع بهدوء الطبيعة وألوان الغروب في العلا.",
         "suggested": true
       }
     ]
@@ -200,6 +245,18 @@
         "description": "مغامرة هايكنج في أبها تجمع بين المسير وسط الطبيعة، القهوة السعودية، العشاء، وجلسات الاسترخاء على قمم عسير.",
         "bookingUrl": "https://onesec.com.sa/products/نحو-القمة",
         "suggested": false
+      },
+      {
+        "title": "نفس الجبل",
+        "place": "عسير، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "٨٨٠ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/821d6a8f-609c-440c-9650-b0b6f892d713.png",
+        "description": "في أحضان أبها، سيدة الضباب، تجدين ملاذك للهدوء عبر جلسات اليوغا الجبلية وتأمل السحاب مع اقتراب الغروب. تنفسي بعمق، واستعيدي توازنك وصفاءك الداخلي، وكوني جزءًا من تجربة مصنوعة من نقاء الطبيعة.",
+        "bookingUrl": "https://onesec.com.sa/products/نفس-الجبل",
+        "suggested": false
       }
     ]
   },
@@ -242,6 +299,17 @@
         "description": "يوم واحد في الطائف يختصر لك جمال العالم، بين التحليق فوق السحاب ومتعة القطاف وبراد جوّها",
         "bookingUrl": "https://onesec.com.sa/products/قطاف-الطائف",
         "suggested": false
+      },
+      {
+        "title": "عبق الورد",
+        "place": "الطائف، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ef05e738-4efb-4074-826e-b0b153f76e55.png",
+        "description": "جولة مقترحة للتعرف على ورد الطائف وحكاياته، مع محطات تصوير وتجربة الروائح المحلية.",
+        "suggested": true
       }
     ]
   },
@@ -284,6 +352,17 @@
         "description": "اختبر حدود شجاعتك فوق الجسور المعلقة، في رحلة يوم واحد بمدينة الباحة. سِر معنا وسط الغيوم المتداخلة مع غابات أشجار العرعر الكثيفة، وتأمل المياه المتدفقة خلال زيارتك إلى الأودية الخضراء الفسيحة في حضن الطبيعة البكر.",
         "bookingUrl": "https://onesec.com.sa/products/ادرينالين",
         "suggested": false
+      },
+      {
+        "title": "دروب الغابة",
+        "place": "الباحة، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/babaec32-1be8-421b-8309-bfc4b88b669b.png",
+        "description": "مسار مقترح بين غابات الباحة للاستمتاع بالمشي والإطلالات والهواء الجبلي.",
+        "suggested": true
       }
     ]
   },
@@ -314,6 +393,28 @@
         "description": "ليست مجرد رحلة، بل حكاية جنوبية تبدأ بقمم فيفاء، وتنتهي بفنجان من البن الخولاني عند الغروب، خلال يوم واحد في جارة القمر.",
         "bookingUrl": "https://onesec.com.sa/products/جارة-القمر",
         "suggested": false
+      },
+      {
+        "title": "نسيم الساحل",
+        "place": "جازان، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ac6a3ea2-7942-4a63-b16f-dd145c661f6e.jpg",
+        "description": "نزهة مقترحة على ساحل جازان للاستمتاع بأجواء البحر ومشهد الغروب.",
+        "suggested": true
+      },
+      {
+        "title": "حكايات السوق",
+        "place": "جازان، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ac6a3ea2-7942-4a63-b16f-dd145c661f6e.jpg",
+        "description": "جولة مقترحة للتعرف على الأسواق المحلية في جازان وحكايات الحرف والمنتجات الشعبية.",
+        "suggested": true
       }
     ]
   }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import cityExperiences from "./data/city-experiences.json";
 
 type Experience = (typeof cityExperiences)[number]["experiences"][number] & { video?: string; bookingUrl?: string };
@@ -103,8 +104,8 @@ export default function Home() {
         </video>
         <div className="hero-shade" />
         <header className="site-header">
-          <a className="wordmark" href="#top" aria-label="مكان آخر، الصفحة الرئيسية">
-            مكان آخر<span className="wordmark-dot">.</span>
+          <a className="wordmark" href="#top" aria-label="ون سكند، الصفحة الرئيسية">
+            <Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} preload />
           </a>
           <nav className="main-nav" aria-label="التنقل الرئيسي">
             <a href="#destinations">الوجهات</a>
@@ -275,7 +276,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand" id="about">
-            <a className="wordmark footer-wordmark" href="#top">مكان آخر<span className="wordmark-dot">.</span></a>
+            <a className="wordmark footer-wordmark" href="#top"><Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} /></a>
             <p>تجارب محلية صغيرة، وذكريات كبيرة تأخذها معك.</p>
           </div>
           <nav className="footer-column" aria-label="استكشف الموقع">
@@ -350,7 +351,7 @@ export default function Home() {
               ×
             </button>
             <a className="wordmark auth-wordmark" href="#top" onClick={() => setAuthMode(null)}>
-              مكان آخر<span className="wordmark-dot">.</span>
+              <Image className="brand-logo" src="/1seclogo.jpeg" alt="ون سكند" width={56} height={56} />
             </a>
             <h2 id="auth-title">{authMode === "login" ? "أهلًا بعودتك" : "انضم إلى مكان آخر"}</h2>
             <p className="auth-intro">{authMode === "login" ? "سجّل دخولك لمتابعة رحلاتك." : "أنشئ حسابًا وابدأ باكتشاف تجارب جديدة."}</p>
