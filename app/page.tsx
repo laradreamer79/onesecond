@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import cityExperiences from "./data/city-experiences.json";
 
@@ -63,6 +66,7 @@ const destinations = [
 ];
 
 export default function Home() {
+  const [selectedCategory, setSelectedCategory] = useState("كل التجارب");
   return (
     <main className="static-preview">
       <section className="hero" id="top">
@@ -118,9 +122,9 @@ export default function Home() {
         <div className="discovery-tools">
           <div className="category-list" aria-label="أنواع التجارب">
             {categories.map((item) => (
-              <span className={`category-button${item === "كل التجارب" ? " is-active" : ""}`} key={item}>
+              <button type="button" className={`category-button${item === selectedCategory ? " is-active" : ""}`} key={item} onClick={() => setSelectedCategory(item)} aria-pressed={item === selectedCategory}>
                 {item}
-              </span>
+              </button>
             ))}
           </div>
         </div>
