@@ -763,8 +763,12 @@ a {
 .city-card-open:focus-visible { outline: 3px solid var(--coral); outline-offset: -3px; }
 @media (max-width: 900px) { .city-experience-grid { grid-template-columns: repeat(2, minmax(0, 300px)); } }
 @media (max-width: 620px) {
-  .city-experience-grid { grid-template-columns: minmax(0, 300px); gap: 16px; }
-  .city-sections { padding: 32px 22px 52px; }
+  .city-experience-grid { grid-template-columns: minmax(0, 1fr); width: 100%; max-width: 380px; margin-inline: auto; gap: 18px; }
+  .city-experience-card { width: 100%; min-width: 0; }
+  .city-experience-image { height: auto; aspect-ratio: 3 / 2; }
+  .city-experience-facts > div { min-width: 0; }
+  .city-experience-facts dd { overflow-wrap: anywhere; }
+  .city-sections { padding: 32px 16px 52px; }
   .city-section + .city-section { margin-top: 24px; }
   .city-experience-copy { padding: 14px; }
 }
@@ -1127,8 +1131,9 @@ a {
   .destinations-heading.section-wrap { margin-bottom: 18px; }
   .destinations-heading h2 { font-size: 24px; }
   .destinations-heading > p { font-size: 14px; }
-  .destination-track { gap: 12px; padding-inline: 16px; }
-  .destination-card-copy { padding: 16px 14px 26px; }
+  .destination-track { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding-inline: 16px; overflow: visible; }
+  .destination-card { height: 120px; min-width: 0; }
+  .destination-card-copy { padding: 12px; }
   .destination-card h3 { font-size: 20px; }
   .destination-description { font-size: 13px; }
   .section-intro { font-size: 12px; }
@@ -1137,7 +1142,8 @@ a {
   .category-list { gap: 4px; }
   .category-button { min-height: 42px; padding: 0 16px; font-size: 12px; }
   .experience-grid { gap: 10px; }
-  .experience-card { flex-basis: min(94vw, 380px); }
+  .experience-card { flex-basis: min(84vw, 340px); }
+  .experience-image { aspect-ratio: 3 / 4; }
   .image-category { top: 9px; inset-inline-start: 8px; padding: 7px; font-size: 8px; }
   .experience-details { padding: 42px 12px 14px; }
   .experience-place { font-size: 9px; }
