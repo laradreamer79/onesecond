@@ -1,0 +1,164 @@
+[
+  {
+    "city": "الرياض",
+    "id": "riyadh",
+    "experiences": [
+      {
+        "title": "رحلة المغامرات",
+        "place": "الرياض، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "يوم واحد",
+        "price": "٣٤٩ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/a770a11a-c38c-42a0-b204-7e19e2e07d36.png",
+        "description": "في المزرعة يجتمع الأبطال الصغار، في رحلة يوم واحد؛ لحل الألغاز وفك طلاسم خريطة الكنز، واكتشاف الخبايا والأسرار، في أجواء مليئة باللعب والمغامرة والطبيعة.",
+        "bookingUrl": "https://onesec.com.sa/products/رحلة-المغامرات",
+        "suggested": false
+      },
+      {
+        "title": "موعد الغروب",
+        "place": "الرياض، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "٣٥٩ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/29244d61-cd55-4106-be4a-2776beecfe3e.png",
+        "description": "مغامرة صحراوية تبدأ بالسفاري بين المسارات الطبيعية، مرورًا بمحطات الغروب والتصوير والرسم والفخار، ثم رمي السهام وألعاب الكرنفال، وتُختتم بعشاء وجلسة مميزة في الهواء الطلق.",
+        "bookingUrl": "https://onesec.com.sa/products/موعد-الغروب",
+        "suggested": false
+      },
+      {
+        "title": "بين النجوم",
+        "place": "الرياض، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "٢٩٥ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/6057a855-3ba6-4e8a-bf85-4bf1ea4bccb2.png",
+        "description": "تجربة ليلية هادئة تبدأ بجلسة يوغا وسط الطبيعة، ثم مراقبة النجوم بالتلسكوب والتصوير الليلي، مع رمي السهام، وتُختتم بضيافة سعودية ووجبة عشاء في أجواء صحراوية مريحة",
+        "bookingUrl": "https://onesec.com.sa/products/بين-النجوم",
+        "suggested": false
+      }
+    ]
+  },
+  {
+    "city": "جدة",
+    "id": "jeddah",
+    "experiences": [
+      {
+        "title": "حوائط المرجان",
+        "place": "جدة، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "تُحدد عند الحجز",
+        "price": "٢٬٣٧٦ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/6d721932-6e4e-4219-8bda-8e79d7cbd264.jpg",
+        "description": "على طراز حجازي فريد، شُيدت بيوت جدة التاريخية بالشعاب المرجانية والصخور الجيرية، وازدانت واجهاتها بشرفات الرواشين التي أضفت عليها طابعًا أصيلًا.",
+        "bookingUrl": "https://onesec.com.sa/products/حوائط-المرجان",
+        "suggested": false
+      },
+      {
+        "title": "الفيروز الأبيض",
+        "place": "جدة، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "يوم واحد",
+        "price": "٣٬٩٧٦ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/eea56f7a-ca2c-4a9f-866d-2abd51054e64.jpg",
+        "description": "يخت ينتظرك على شاطئ البحر الأحمر؛ لينقلك في رحلة ليوم واحد إلى بياضة، مالديف جدة.",
+        "bookingUrl": "https://onesec.com.sa/products/الفيروز-الأبيض",
+        "suggested": false
+      },
+      {
+        "title": "جميل",
+        "place": "جدة، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "يوم واحد",
+        "price": "٢٬٦٧٦ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/36c34c32-356d-4211-a9a3-ebb9ab8fce71.jpg",
+        "description": "في رحلة يوم واحد تنبض بالإبداع والحياة، تبدأ تجربتك من حي جميل لاستكشاف الفن المعاصر، ثم تنتقل إلى أجواء الترفيه في سيتي ووك، وتستمتع في ختامها بعشاء حجازي فاخر ونزهة ساحرة على واجهة جدة بروميناد بإطلالتها البحرية المميزة.",
+        "bookingUrl": "https://onesec.com.sa/products/جميل",
+        "suggested": false
+      }
+    ]
+  },
+  {
+    "city": "ينبع",
+    "id": "yanbu",
+    "experiences": [
+      {
+        "title": "استكشاف البحر الأحمر",
+        "description": "جولة بحرية مقترحة للاستمتاع بالمياه الصافية واكتشاف أجواء البحر الأحمر.",
+        "place": "ينبع، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/eea56f7a-ca2c-4a9f-866d-2abd51054e64.jpg",
+        "suggested": true
+      },
+      {
+        "title": "حكايات ينبع التاريخية",
+        "description": "جولة مقترحة بين أزقة ينبع التاريخية للتعرف على تراث المدينة وروحها المحلية.",
+        "place": "ينبع، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/eea56f7a-ca2c-4a9f-866d-2abd51054e64.jpg",
+        "suggested": true
+      },
+      {
+        "title": "غروب على الشاطئ",
+        "description": "تجربة مقترحة للاسترخاء على الساحل والاستمتاع بمشهد الغروب ونسيم البحر.",
+        "place": "ينبع، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/eea56f7a-ca2c-4a9f-866d-2abd51054e64.jpg",
+        "suggested": true
+      }
+    ]
+  },
+  {
+    "city": "العلا",
+    "id": "alula",
+    "experiences": [
+      {
+        "title": "بين صخور العلا",
+        "description": "مسار مقترح بين التكوينات الصخرية للاستمتاع بطبيعة العلا ومحطات التصوير.",
+        "place": "العلا، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/29244d61-cd55-4106-be4a-2776beecfe3e.png",
+        "suggested": true
+      },
+      {
+        "title": "حكايات البلدة القديمة",
+        "description": "جولة مقترحة للتعرف على أزقة البلدة القديمة وحكايات المكان وتراثه.",
+        "place": "العلا، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/29244d61-cd55-4106-be4a-2776beecfe3e.png",
+        "suggested": true
+      },
+      {
+        "title": "ليلة تحت النجوم",
+        "description": "جلسة مقترحة في أجواء الصحراء للاستمتاع بالهدوء وتأمل السماء بعيدًا عن صخب المدينة.",
+        "place": "العلا، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "عند الطلب",
+        "rating": "مقترحة",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/29244d61-cd55-4106-be4a-2776beecfe3e.png",
+        "suggested": true
+      }
+    ]
+  }
+]

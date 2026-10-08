@@ -1,10 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
+import cityExperiences from "./data/city-experiences.json";
 
 const experiences = [
   {
-    title: "مائدة بين أشجار الليمون",
+    title: "موعد الغروب",
     place: "ساحل أمالفي، إيطاليا",
     category: "مذاقات محلية",
     duration: "٣ ساعات",
@@ -16,7 +17,7 @@ const experiences = [
       "اكتشف وصفات عائلية في التلال المطلة على بوسيتانو، ثم استمتع بغداء هادئ تحت أشجار الليمون.",
   },
   {
-    title: "المدينة قبل أن تستيقظ",
+    title: "دروب الطوقي",
     place: "لشبونة، البرتغال",
     category: "حياة أهل المكان",
     duration: "ساعتان ونصف",
@@ -28,7 +29,7 @@ const experiences = [
       "اركب أول ترام مع أحد أبناء لشبونة، وتوقف لتذوق الباستيل الدافئ وسماع الحكايات في أزقة ألفاما القديمة.",
   },
   {
-    title: "ساعة الغروب فوق الماء",
+    title: "بين النجوم",
     place: "باروس، اليونان",
     category: "في الهواء الطلق",
     duration: "٤ ساعات",
@@ -40,7 +41,7 @@ const experiences = [
       "انطلق بقارب شراعي صغير نحو خلجان خفية ومياه صافية، بصحبة ربان محلي يعرف البحر جيدًا.",
   },
   {
-    title: "طين وقهوة وحكايات",
+    title: "محقق الصحراء",
     place: "مراكش، المغرب",
     category: "حِرف وتعلّم",
     duration: "ساعتان",
@@ -52,7 +53,7 @@ const experiences = [
       "اقضِ ظهيرة هادئة في ورشة فخار من الحي، وتعرّف على أسرار الدولاب بينما تحتسي الشاي بالنعناع.",
   },
   {
-    title: "فاس كما يرويها أهلها",
+    title: "دروب",
     place: "فاس، المغرب",
     category: "حياة أهل المكان",
     duration: "٣ ساعات",
@@ -64,7 +65,7 @@ const experiences = [
       "تجوّل في دروب المدينة القديمة بصحبة دليل محلي، وتعرّف على الحرفيين والحكايات التي تحفظ ذاكرة المكان.",
   },
   {
-    title: "دروب خضراء فوق الغيوم",
+    title: "رحلة الضباب والغروب",
     place: "ماديرا، البرتغال",
     category: "في الهواء الطلق",
     duration: "٥ ساعات",
@@ -75,30 +76,48 @@ const experiences = [
     description:
       "اتبع مسارات ليفادا القديمة بين الغابات والقمم، مع توقفات صغيرة يختارها مرشد يعرف الجزيرة جيدًا.",
   },
+  {
+    title: "العبير الجبلي",
+    place: "الطائف، السعودية",
+    category: "في الهواء الطلق",
+    duration: "يوم واحد",
+    price: "١٬٧٥٨ ر.س",
+    rating: "جديد",
+    image: "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=500,height=500/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ef05e738-4efb-4074-826e-b0b153f76e55.png",
+    description: "من حافة الغيم والقمم الشاهقة، اكتشف مدينة الطائف كما لم تعهدها من قبل، واستمتع بجوها البارد وروحها الحجازية الأصيلة، في رحلة يوم واحد، تُعيد لك هدوءك وصفاء ذهنك.",
+  },
+  {
+    title: "رحلة الأصدقاء",
+    place: "أبها، السعودية",
+    category: "في الهواء الطلق",
+    duration: "٣ أيام وليلتان",
+    price: "٧٬١٩٦ ر.س",
+    rating: "جديد",
+    image: "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=500,height=500/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/cd990293-6ca9-4647-ab7f-9075b0d2724e.png",
+    description: "اهرب من حرارة الصيف إلى الأجواء الباردة، واستمتع بقمم عسير الغارقة في الضباب، في رحلة اقتصادية صُنعت خصيصًا من أجلك، على مدار 3 أيام وليلتين بمدينة أبها، ساحرة الجنوب.",
+  },
 ];
 
 const categories = ["كل التجارب", "مذاقات محلية", "في الهواء الطلق", "حياة أهل المكان", "حِرف وتعلّم"];
 const destinations = [
   {
-    number: "٠١",
-    title: "الريف",
-    description: "دروب هادئة وبيوت صغيرة بين أحضان الطبيعة.",
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85",
+    title: "الرياض",
+    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=85",
   },
   {
-    number: "٠٢",
-    title: "المخيم",
-    description: "ليالٍ تحت النجوم وجلسات حول نار المخيم.",
-    image: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=85",
+    title: "جدة",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85",
   },
   {
-    number: "٠٣",
-    title: "المنتجع",
-    description: "استرخاء على الشاطئ وإقامة تليق بإجازتك.",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85",
+    title: "ينبع",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85",
+  },
+  {
+    title: "العلا",
+    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=85",
   },
 ];
-type Experience = (typeof experiences)[number];
+type Experience = (typeof experiences)[number] & { bookingUrl?: string; suggested?: boolean };
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -246,7 +265,6 @@ export default function Home() {
                     style={{ backgroundImage: `url("${experience.image}")` }}
                   >
                     <span className="image-category">{experience.category}</span>
-                    <span className="image-arrow" aria-hidden="true">↗</span>
                     <span className="experience-details">
                       <span className="experience-place">{experience.place}</span>
                       <span className="experience-title">{experience.title}</span>
@@ -282,7 +300,7 @@ export default function Home() {
       <section className="destinations-section" id="destinations">
         <div className="destinations-heading section-wrap">
           <h2>وين ودّك تكون؟</h2>
-          <p>بين هدوء الطبيعة وحماس المغامرة، اكتشف التجربة اللي تناسبك</p>
+          <p>الرياض، جدة، ينبع أو العلا — اختر مدينتك واكتشف أجواءها</p>
         </div>
         <div className="destination-track" aria-label="وجهات التجارب السياحية">
           {destinations.map((destination) => (
@@ -294,30 +312,44 @@ export default function Home() {
                 style={{ backgroundImage: `url("${destination.image}")` }}
               />
               <div className="destination-card-copy">
-                <p className="destination-number">الوجهة {destination.number}</p>
                 <h3>{destination.title}</h3>
-                <p className="destination-description">{destination.description}</p>
-                <a className="destination-link" href="#experiences" aria-label={`اكتشف تجارب ${destination.title}`}>
-                  اكتشف الوجهة <span aria-hidden="true">↗</span>
-                </a>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="manifesto" id="how-it-works">
-        <div className="manifesto-image" role="img" aria-label="خيمة دافئة في مخيم شتوي بين الأشجار" />
-        <div className="manifesto-copy">
-          <p className="eyebrow dark-eyebrow">رحلة الموسم</p>
-          <h2>جرّب التخييم<br />في الشتاء.</h2>
-          <p>
-            اجلس قرب النار، التفّ ببطانية دافئة، واستمتع بهدوء الطبيعة بعد الغروب.
-            ليلة شتوية بسيطة بصحبة مضيفين محليين تجعل البرد جزءًا من الحكاية.
-          </p>
-          <a href="#experiences" className="text-link">اكتشف تجربة التخييم الشتوية <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
+      <div className="city-sections">
+        {cityExperiences.map((city) => (
+          <section className="city-section" id={`city-${city.id}`} key={city.id} aria-labelledby={`city-heading-${city.id}`}>
+            <div className="section-heading city-heading">
+              <div>
+                <p className="eyebrow dark-eyebrow">اكتشف المدينة</p>
+                <h2 id={`city-heading-${city.id}`}>تجارب {city.city}</h2>
+              </div>
+            </div>
+            <div className="city-experience-grid">
+              {city.experiences.map((experience) => (
+                <article className="city-experience-card" key={experience.title}>
+                  <div className="city-experience-image" style={{ backgroundImage: `url("${experience.image}")` }}>
+                    <span className="image-category">{experience.suggested ? "تجربة مقترحة" : experience.category}</span>
+                  </div>
+                  <div className="city-experience-copy">
+                    <p className="city-experience-place">{experience.place}</p>
+                    <h3>{experience.title}</h3>
+                    <p className="city-experience-description">{experience.description}</p>
+                    <dl className="city-experience-facts">
+                      <div><dt>المدة</dt><dd>{experience.duration}</dd></div>
+                      <div><dt>السعر</dt><dd>{experience.price}</dd></div>
+                    </dl>
+                  </div>
+                  <button className="city-card-open" type="button" onClick={() => setSelectedExperience(experience)} aria-label={`عرض تفاصيل ${experience.title} في ${experience.place}`} />
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
 
       <footer className="site-footer">
         <div className="footer-main">
@@ -332,7 +364,6 @@ export default function Home() {
           </nav>
           <nav className="footer-column" aria-label="تجارب الموسم">
             <h2>عِش اللحظة</h2>
-            <a href="#how-it-works">التخييم في الشتاء</a>
             <a href="#top">ابدأ رحلتك</a>
           </nav>
           <div className="footer-column footer-contact">
@@ -372,8 +403,8 @@ export default function Home() {
               <h2 id="dialog-title">{selectedExperience.title}</h2>
               <p>{selectedExperience.description}</p>
               <div className="dialog-bottom">
-                <span>ابتداءً من <strong>{selectedExperience.price}</strong> للشخص</span>
-                <a href="mailto:hello@elsewhere.travel?subject=Plan%20an%20experience">استفسر عن المواعيد <span aria-hidden="true">↗</span></a>
+                <span>{selectedExperience.suggested ? "السعر " : "ابتداءً من "}<strong>{selectedExperience.price}</strong></span>
+                <a href={selectedExperience.bookingUrl ?? "mailto:hello@elsewhere.travel?subject=Plan%20an%20experience"}>{selectedExperience.bookingUrl ? "التفاصيل والحجز" : "استفسر عن المواعيد"} <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </section>
