@@ -76,8 +76,7 @@ export default function Home() {
           loop
           muted
           playsInline
-          preload="metadata"
-          poster="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2400&q=90"
+          preload="auto"
           aria-hidden="true"
         >
           <source

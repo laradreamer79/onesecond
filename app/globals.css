@@ -52,7 +52,6 @@ a {
   overflow: hidden;
   color: #fff;
   background-color: #40594e;
-  background-image: url("https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2400&q=90");
   background-position: center 52%;
   background-size: cover;
   animation: hero-arrive 1s ease-out both;
