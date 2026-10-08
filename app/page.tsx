@@ -50,6 +50,10 @@ const destinations = [
     title: "العلا",
     image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=85",
   },
+  ...cityExperiences.filter((city) => ["asir", "taif", "al-bahah", "jazan"].includes(city.id)).map((city) => ({
+    title: city.city,
+    image: city.experiences[0].image,
+  })),
 ];
 
 export default function Home() {
@@ -200,7 +204,6 @@ export default function Home() {
                     {experience.video && (
                       <video className="experience-video" src={experience.video} poster={experience.image} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
                     )}
-                    <span className="image-category">{experience.category}</span>
                     <span className="experience-details">
                       <span className="experience-place">{experience.place}</span>
                       <span className="experience-title">{experience.title}</span>
@@ -236,7 +239,7 @@ export default function Home() {
       <section className="destinations-section" id="destinations">
         <div className="destinations-heading section-wrap">
           <h2>وين ودّك تكون؟</h2>
-          <p>الرياض، جدة، ينبع أو العلا — اختر مدينتك واكتشف أجواءها</p>
+          <p>اختر وجهتك واكتشف تجارب الرياض، جدة، ينبع، العلا، عسير، الطائف، الباحة وجازان</p>
         </div>
         <div className="destination-track" aria-label="وجهات التجارب السياحية">
           {destinations.map((destination) => (
@@ -261,14 +264,13 @@ export default function Home() {
             <div className="section-heading city-heading">
               <div>
                 <p className="eyebrow dark-eyebrow">اكتشف المدينة</p>
-                <h2 id={`city-heading-${city.id}`}>تجارب {city.city}</h2>
+                <h2 id={`city-heading-${city.id}`}>{city.city}</h2>
               </div>
             </div>
             <div className="city-experience-grid">
               {city.experiences.map((experience) => (
                 <article className="city-experience-card" key={experience.title}>
                   <div className="city-experience-image" style={{ backgroundImage: `url("${experience.image}")` }}>
-                    <span className="image-category">{experience.suggested ? "تجربة مقترحة" : experience.category}</span>
                   </div>
                   <div className="city-experience-copy">
                     <p className="city-experience-place">{experience.place}</p>

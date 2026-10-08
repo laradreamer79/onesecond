@@ -160,5 +160,161 @@
         "suggested": true
       }
     ]
+  },
+  {
+    "city": "عسير",
+    "id": "asir",
+    "experiences": [
+      {
+        "title": "رحلة الأصدقاء",
+        "place": "عسير، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "٣ أيام وليلتان",
+        "price": "٧٬١٩٦ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/cd990293-6ca9-4647-ab7f-9075b0d2724e.png",
+        "description": "اهرب من حرارة الصيف إلى الأجواء الباردة، واستمتع بقمم عسير الغارقة في الضباب، في رحلة اقتصادية صُنعت خصيصًا من أجلك، على مدار 3 أيام وليلتين بمدينة أبها، ساحرة الجنوب.",
+        "bookingUrl": "https://onesec.com.sa/products/رحلة-الأصدقاء",
+        "suggested": false
+      },
+      {
+        "title": "رحلة الضباب والغروب",
+        "place": "عسير، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "٢٬٤٧٥ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/3040d957-5efa-4315-9887-133313d5d666.png",
+        "description": "تجربة جبلية مميزة في مرتفعات عسير، تجمع بين أجواء الضباب، الإطلالات البانورامية، جلسة القهوة ومشاهدة الغروب من القمم.",
+        "bookingUrl": "https://onesec.com.sa/products/رحلة-الضباب-والغروب",
+        "suggested": false
+      },
+      {
+        "title": "نحو القمة",
+        "place": "عسير، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "١٬٨٩٠ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/7762a261-9b14-43b5-914d-f18693d476d1.png",
+        "description": "مغامرة هايكنج في أبها تجمع بين المسير وسط الطبيعة، القهوة السعودية، العشاء، وجلسات الاسترخاء على قمم عسير.",
+        "bookingUrl": "https://onesec.com.sa/products/نحو-القمة",
+        "suggested": false
+      }
+    ]
+  },
+  {
+    "city": "الطائف",
+    "id": "taif",
+    "experiences": [
+      {
+        "title": "العبير الجبلي",
+        "place": "الطائف، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "يوم واحد",
+        "price": "١٬٧٥٨ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ef05e738-4efb-4074-826e-b0b153f76e55.png",
+        "description": "من حافة الغيم والقمم الشاهقة، اكتشف مدينة الطائف كما لم تعهدها من قبل، واستمتع بجوها البارد وروحها الحجازية الأصيلة، في رحلة يوم واحد، تُعيد لك هدوءك وصفاء ذهنك",
+        "bookingUrl": "https://onesec.com.sa/products/العبير-الجبلي",
+        "suggested": false
+      },
+      {
+        "title": "الباب الجبلي",
+        "place": "الطائف، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "تُحدد عند الحجز",
+        "price": "١٬٧٥٨ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/55a448cb-ee2b-4850-8b40-5c3fabeee106.png",
+        "description": "انغمس في خبايا سور الطائف العتيق وبواباته الجبلية، فعند عبورك إحداها، يقودك أريج العود والعنبر إلى ممرات سوق البلد التاريخي، وتُفتح صفحات الماضي بحكايات تُحفر في الوجدان.",
+        "bookingUrl": "https://onesec.com.sa/products/الباب-الجبلي",
+        "suggested": false
+      },
+      {
+        "title": "قطاف الطائف",
+        "place": "الطائف، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "يوم واحد",
+        "price": "٢٬٧٣٣ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/9af9d228-136e-4434-bc04-0b094fa42744.png",
+        "description": "يوم واحد في الطائف يختصر لك جمال العالم، بين التحليق فوق السحاب ومتعة القطاف وبراد جوّها",
+        "bookingUrl": "https://onesec.com.sa/products/قطاف-الطائف",
+        "suggested": false
+      }
+    ]
+  },
+  {
+    "city": "الباحة",
+    "id": "al-bahah",
+    "experiences": [
+      {
+        "title": "نزهات الباحة",
+        "place": "الباحة، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "تُحدد عند الحجز",
+        "price": "٢٬٤٥٣ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/babaec32-1be8-421b-8309-bfc4b88b669b.png",
+        "description": "لوحة طبيعية بين الغابات والجبال، بأجواء باردة وطبيعة هادئة تجعلها وجهة مثالية لعشاق الاسترخاء والطبيعة.",
+        "bookingUrl": "https://onesec.com.sa/products/نزهات-الباحة",
+        "suggested": false
+      },
+      {
+        "title": "ريحانة",
+        "place": "الباحة، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "يوم واحد",
+        "price": "٢٬٣٦٩ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/c8a70c1d-619b-4197-906f-983f40a2a8fb.png",
+        "description": "في أعالي الباحة، تتجلى عراقة التاريخ وموروثها المحلي، وفي رحلة يوم واحد تمتزج روائح الريحان العطرة بضبابٍ يلتف حول قلاعها القديمة ومدرجاتها الخضراء، في مشهد خلاب يخطف الأنظار.",
+        "bookingUrl": "https://onesec.com.sa/products/ريحانة",
+        "suggested": false
+      },
+      {
+        "title": "ادرينالين",
+        "place": "الباحة، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "يوم واحد",
+        "price": "٢٬٣٦٩ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/3ac70f3b-e078-4263-b52c-a03979afeee9.png",
+        "description": "اختبر حدود شجاعتك فوق الجسور المعلقة، في رحلة يوم واحد بمدينة الباحة. سِر معنا وسط الغيوم المتداخلة مع غابات أشجار العرعر الكثيفة، وتأمل المياه المتدفقة خلال زيارتك إلى الأودية الخضراء الفسيحة في حضن الطبيعة البكر.",
+        "bookingUrl": "https://onesec.com.sa/products/ادرينالين",
+        "suggested": false
+      }
+    ]
+  },
+  {
+    "city": "جازان",
+    "id": "jazan",
+    "experiences": [
+      {
+        "title": "الذهب الأخضر",
+        "place": "جازان، السعودية",
+        "category": "حياة أهل المكان",
+        "duration": "يوم واحد",
+        "price": "٢٬٢٤٥ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/ac6a3ea2-7942-4a63-b16f-dd145c661f6e.jpg",
+        "description": "على قمم الدائر بني مالك في جازان، نأخذك في رحلة يوم واحد، تجمع بين روح الضيافة ورشفات البن الخولاني الأصيل؛ لتستمتع بحكايات زراعته الممتدة منذ قرون، وطرق رعاية أشجاره المعمرة بالأساليب التقليدية التي ما زالت مستخدمة حتى الآن.",
+        "bookingUrl": "https://onesec.com.sa/products/الذهب-الأخضر",
+        "suggested": false
+      },
+      {
+        "title": "جارة القمر",
+        "place": "جازان، السعودية",
+        "category": "في الهواء الطلق",
+        "duration": "يوم واحد",
+        "price": "٢٬٢٤٥ ر.س",
+        "rating": "جديد",
+        "image": "https://media.zid.store/cdn-cgi/image/fit=scale-down,width=1000,height=1000/https://media.zid.store/363e0d99-c213-4b25-93d5-969bc8ed3239/55b4d148-19a6-49ac-80a3-6f483ade39a7.jpg",
+        "description": "ليست مجرد رحلة، بل حكاية جنوبية تبدأ بقمم فيفاء، وتنتهي بفنجان من البن الخولاني عند الغروب، خلال يوم واحد في جارة القمر.",
+        "bookingUrl": "https://onesec.com.sa/products/جارة-القمر",
+        "suggested": false
+      }
+    ]
   }
 ]

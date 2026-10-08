@@ -657,6 +657,7 @@ a {
 
 .destination-track {
   display: flex;
+  margin-right: 24px;
   justify-content: safe center;
   gap: 12px;
   overflow-x: auto;
@@ -1133,7 +1134,7 @@ a {
   .destinations-heading.section-wrap { margin-bottom: 18px; }
   .destinations-heading h2 { font-size: 24px; }
   .destinations-heading > p { font-size: 14px; }
-  .destination-track { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding-inline: 16px; overflow: visible; }
+  .destination-track { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-right: 8px; padding-inline: 16px; overflow: visible; }
   .destination-card { height: 120px; min-width: 0; }
   .destination-card-copy { padding: 12px; }
   .destination-card h3 { font-size: 20px; }
